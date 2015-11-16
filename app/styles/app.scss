@@ -1,0 +1,15 @@
+$light-blue:#10a7c7;
+
+@import 'header';
+
+a {
+  color: #fff;
+
+  &:hover {
+    color: #ccc;
+  }
+}
+
+.characterCount {
+  float: right;
+}

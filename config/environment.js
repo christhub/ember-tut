@@ -3,7 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'kitnr',
-    environment: environment,
+    environment: 'kitnr/pods',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -16,7 +16,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    contentSecurityPolicy: {
+      'font-src': "'self' * fonts.gstatic.com 'unsafe-inline'",
+      'style-src': "'self' fonts.googleapis.com 'unsafe-inline'",
+      'img-src': "'self' * 'unsafe-inline'",
+      'connect-src': "'self' * 'unsafe-inline'"
+    },
   };
 
   if (environment === 'development') {
