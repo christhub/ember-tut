@@ -7,6 +7,7 @@ export default Ember.Route.extend({
   actions: {
     deletePost(kitn) {
       kitn.destroyRecord();
+      this.transitionTo('post.index');
     }
   },
 });

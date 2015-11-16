@@ -1,16 +1,20 @@
 {{#link-to 'post.new'}}<button class="ui blue button">Create new post</button>{{/link-to}}
+{{#link-to 'post.index' (query-params sort='dateAsc')}}<button class="ui button">Sort: Date Asc</button>{{/link-to}}
+{{#link-to 'post.index' (query-params sort='dateDesc')}}<button class="ui button">Sort: Date Desc</button>{{/link-to}}
+{{#link-to 'post.index' (query-params sort='title')}}<button class="ui button">Sort: Title</button>{{/link-to}}
 
-{{#each model as |kitn|}}
+{{#each sortedPosts as |kitn|}}
   <div class="ui fluid card">
     <div class="image">
       <img src="img/{{kitn.image}}" alt="Kitten" />
     </div>
     <div class="content">
-      <h2 class="header">{{kitn.image}}</h2>
+      <h2 class="header">{{kitn.title}}</h2>
       <div class="description">
         {{kitn.message}}
       </div>
-      <div class="delete">
+      <div class="extra content">
+        {{moment-format kitn.createdAt 'h:mm:ss a' }}<br>
         <button class="ui red button" {{ action 'deletePost' kitn }} >delete</button>
       </div>
     </div>
