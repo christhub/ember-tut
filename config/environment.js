@@ -3,7 +3,9 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'kitnr',
-    environment: 'kitnr/pods',
+    podModulePrefix: 'kitnr/pods',
+    environment: environment,
+    firebase: 'https://intense-inferno-7813.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

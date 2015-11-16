@@ -1,0 +1,15 @@
+{{#link-to 'post.new'}}<button class="ui blue botton">Create new post</button>{{/link-to}}
+
+{{#each model as |kitn|}}
+  <div class="ui fluid card">
+    <div class="image">
+      <img src="img/{{kit.image}}" alt="Kitten" />
+    </div>
+    <div class="content">
+      <h2 class="header">{{kitn.image}}</h2>
+      <div class="description">
+        {{kitn.message}}
+      </div>
+    </div>
+  </div>
+{{/each}}

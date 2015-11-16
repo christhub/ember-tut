@@ -8,6 +8,8 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('post', {
     path: 'posts'
+  }, function() {
+    this.route('new');
   });
 
   this.route('user', {
