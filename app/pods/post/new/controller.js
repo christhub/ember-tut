@@ -4,8 +4,14 @@ export default Ember.Controller.extend({
   characterCount: Ember.computed('model.message', function(){
     let message = this.get('model').get('message');
 
-    if(message) return message.length;
-    else return 0;
+    if(message) {
+      if(message.length < 6 && message.length > 120) {
+        this.set('disableButton', true);
+        return message.length;
+      } else {
+        return message.length;
+      }
+    } else return 0;
   }),
   actions: {
     save() {

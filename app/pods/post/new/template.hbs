@@ -14,7 +14,11 @@
     </span>
   </div>
   <div class="ui large buttons">
-    <button class="ui button green">Save</button>
+    {{#if disableButton}}
+      <button class="ui button">Save</button>
+    {{else}}
+      <button class="ui button green">Save</button>
+    {{/if}}
     <div class="or"></div>
     <button {{action "cancel"}} class="ui button red">Cancel</button>
   </div>
